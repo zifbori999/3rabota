@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /* Задание 1 */
+        var book1 = {};
+        book1.title = 'Легенда';
+        book1.pubYear = '1990';
+        book1.price = '10$';
+
+        book1.show = function() {
+            console.log(book1.title + " - " + book1.price)
+        }
+
+        function showBook() {
+            console.log(this.title + ' - ' + this)
+        }
+
+        book1.show();
+
+        var book2 = {
+            title: 'Забытые',
+            pubYear: '1999',
+            price: '30$',
+        }
+
+        book2.show = function() {
+            console.log(book2.title + " - " + book2.price)
+        }
+
+        function showBook() {
+            console.log(this.title + ' - ' + this)
+        }
+
+        book2.show();
+
+        for (var o in book1) {
+            console.log(o + " - " + book1[o]);
+        }
+
+        for (var o in book2) {
+            console.log(o + " - " + book1[o]);
+        }
+
+        /* Задание 2 */
+        var a = [5, 12];
+        var b = [];
+        a[99] = 7;
+
+        var length = a.length;
+        var num;
+
+        for (var i = 0; i < length; i++) {
+            num = a[i];
+
+            if (num != null) {
+                b.push(num * num);
+            }
+        }
+
+        console.log(b);
+
+        /* Задание 3 */
+        var sb = 'Дана строка. Сделайте заглавным первый символ каждого слова этой строки';
+        var b = sb.split(' ');
+        var newarr = [];
+        for (var i = 0; i < b.length; i++) {
+            newarr.push(ucfirst(b[i]));
+        }
+        alert(newarr.join(' '));
+
+        function ucfirst(str) {
+            var a = str[0].toUpperCase() + str.substr(1);
+            return (a);
+        }
+
+        /* Задание 4 */
+        var text = 'Мы знаем, что монохромный цвет - это градации серого';
+        var txt = 'хром';
+        var word;
+
+        var part = text.indexOf(txt);
+        console.log(part);
+        var firtsSpace = text.lastIndexOf(' ', part);
+        console.log(firtsSpace);
+        var nextSpace = text.indexOf(' ', part);
+        console.log(nextSpace);
+        word = text.slice(firtsSpace, nextSpace);
+        console.log(word);
+
+        /* Задание 5 */
+        var book1 = {};
+        book1.title = 'Война';
+        book1.pubYear = '2002';
+        book1.price = '200$';
+
+        book1.show = function() {
+            console.log(book1.title + " - " + book1.price)
+        }
+
+        function showBook() {
+            console.log(this.title + ' - ' + this)
+        }
+    </script>
+</body>
+
+</html>
